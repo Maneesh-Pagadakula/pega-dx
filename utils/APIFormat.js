@@ -19,6 +19,7 @@ export default class APIFormat {
     this.pathVariables = pathVariables;
     this.requestParameters = requestParameters;
     this.dependentOn = dependentOn;
+    this.payloadPath = null; 
   }
 
   toString() {
@@ -32,6 +33,7 @@ export default class APIFormat {
   pathVariables='${this.pathVariables}',
   requestParameters='${this.requestParameters}',
   dependentOn='${this.dependentOn}'
+  payloadPath='${this.payloadPath}'
 }`;
   }
 }

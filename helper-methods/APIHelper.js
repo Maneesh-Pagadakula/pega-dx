@@ -1,7 +1,8 @@
-// utils/OAuthAPIHelper.js
 import axios from 'axios';
 import config from '../config/config.js';
 import { Buffer } from 'buffer';
+import fs from 'fs';
+import path from 'path';
 
 let cachedAccessToken = null;
 let cachedTokenType = null;
@@ -46,7 +47,10 @@ export class APIHelper {
       }
     }
 
-    return url;
+    const base_url = config['Base-API-URL']?.replace(/\/+$/, '') || '';
+    const constrcuted_url = base_url + (url.startsWith('/')?url:`${url}`);
+
+    return constrcuted_url;
   }
 
   static resolveRuntimeValue(value, runtimeData) {
@@ -86,22 +90,59 @@ export class APIHelper {
     };
 
     try {
-      const tokenMap = await this.fetchOAuthToken(
-        config['oauth.tokenUrl'],
-        config['oauth.clientId'],
-        config['oauth.clientSecret'],
+      if (
+        config['oauth.tokenUrl'] &&
+        config['oauth.clientId'] &&
+        config['oauth.clientSecret'] &&
         config['oauth.tokenName']
-      );
+      ) {
+        const tokenMap = await this.fetchOAuthToken(
+          config['oauth.tokenUrl'],
+          config['oauth.clientId'],
+          config['oauth.clientSecret'],
+          config['oauth.tokenName']
+        );
 
-      if (tokenMap.token_type && tokenMap.access_token) {
-        headers['Authorization'] = `${tokenMap.token_type} ${tokenMap.access_token}`;
+        if (tokenMap.token_type && tokenMap.access_token) {
+          headers['Authorization'] = `${tokenMap.token_type} ${tokenMap.access_token}`;
+        }
+      }
+      
+      const basicUser = config['basicAuth.username'];
+      const basicPass = config['basicAuth.password'];
+      if (basicUser && basicPass) {
+        const basicAuth = Buffer.from(`${basicUser}:${basicPass}`).toString("base64");
+        headers['Authorization'] = `basic ${basicAuth}`;
       }
     } catch (e) {
-      console.error('OAuth Token Error:', e.message);
+      console.error('Error while setting Auth header:', e.message);
     }
 
     return headers;
   }
+
+
+static async getRequestBody(apiData) {
+   try {
+    const payload = apiData.payload;
+
+    if (!payload || typeof payload !== 'string') return null;
+
+    // Case 1: If it's a file reference (e.g., UCC Search - True.json)
+    if (!payload.includes('{')) {
+      const payloadPath = path.resolve('resources/request-payloads', payload.trim());
+      const payloadContent = fs.readFileSync(payloadPath, 'utf-8');
+      return JSON.parse(payloadContent);
+    }
+
+    // Case 2: Inline JSON from Excel
+    return JSON.parse(payload);
+  } catch (error) {
+    console.error("Error reading payload: ${error.message}");
+    return null;
+  }
+}
+
 
   static async fetchOAuthToken(tokenUrl, clientId, clientSecret, tokenName) {
     const now = Math.floor(Date.now() / 1000);
@@ -143,5 +184,7 @@ export class APIHelper {
     } catch (err) {
       throw new Error(`Failed to fetch OAuth token: ${err.message}`);
     }
+
   }
+  
 }

@@ -1,82 +1,80 @@
 import { test, expect } from '@playwright/test';
-import { CreateCase } from '../workflows/create-case.js';
-import { LoginWorkflow } from '../workflows/login-workflow.js';
-import { SelectPassportType } from '../workflows/select-passport-type.js';
-import { GetCaseDetails } from '../workflows/get-case-details.js';
-
-import { HomePageObjects } from '../page-objects/home-page-objects.js';
-import config from '../config/config.js';
+import { LoginWorkflow } from '../workflows/login.js';
+import { GetOrderDetails } from '../workflows/get-order-details.js';
 import { PlaywrightEnvironmentSetup } from '../setup/playwright-environment-setup.js';
 
-test.describe('Pega DIX Application API + UI Test Suite', () => {
-  let env;
-  let createCase;
-  let loginWorkflow;
-  let selectPassportType;
-  let getCaseDetails;
-  let homePageObjects;
+let env;
+let loginWorkflow;
+let getOrderDetails;
 
-  test.beforeEach(async () => {
+function extractOrderId(id) {
+  const match = id.match(/O-\d+/);
+  return match ? match[0] : null;
+}
+
+function extractGroupId(groupId) {
+  let textToExtractFrom;
+
+  if (Array.isArray(groupId)) {
+    // Handle array with string values
+    textToExtractFrom = groupId[0]; // first item in array
+  } else if (typeof groupId === 'string') {
+    textToExtractFrom = groupId;
+  }
+
+  if (typeof textToExtractFrom === 'string') {
+    const match = textToExtractFrom.match(/G-\d+/);
+    return match ? match[0] : null;
+  }
+
+  return null;
+}
+
+
+
+test.describe.serial('UCC Pega DX API + UI Modular Automation Tests', () => {
+  test.beforeAll(async () => {
     env = new PlaywrightEnvironmentSetup();
     await env.setupSuite();
-
-    createCase = new CreateCase();
     loginWorkflow = new LoginWorkflow();
-    selectPassportType = new SelectPassportType();
-    getCaseDetails = new GetCaseDetails();
+    getOrderDetails = new GetOrderDetails();
+    for (const workflow of [loginWorkflow, getOrderDetails]) {
+      workflow.page = env.page;
+      workflow.getAPIList = () => env.getAPIList();
+    }
 
-    // Inject page/context
-    createCase.page = env.page;
-    loginWorkflow.page = env.page;
-    selectPassportType.page = env.page;
-    getCaseDetails.page = env.page;
-
-    createCase.getAPIList = () => env.getAPIList();
     loginWorkflow.getInputData = () => env.getInputData();
-    selectPassportType.getAPIList = () => env.getAPIList();
-    getCaseDetails.getAPIList = () => env.getAPIList();
-
-    homePageObjects = new HomePageObjects();
   });
 
   test.afterAll(async () => {
     await env.teardownSuite();
   });
 
-  test('Full Workflow: Create Case → Select Passport Type → Get Case Details', async () => {
-    let id;
-
-    await test.step('Step 1: Log into application', async () => {
-      const inputData = env.getInputData();
-      await loginWorkflow.login(inputData.get('username'), inputData.get('password'));
-    });
-
-    await test.step('Step 2: Create a case via API and validate in UI', async () => {
-      const api = env.getAPIList().get('Create Case');
-      id = await createCase.executeCreateCase(api);
-      await env.page.reload();
-
-      await createCase.highlightAndScreenshotCaseRow(
-        env.page,
-        homePageObjects.linkText_caseId,
-        createCase.extractCaseId(id)
-      );
-
-      await env.page.waitForTimeout(2500);
-    });
-
-    await test.step('Step 3: Execute API to select passport type', async () => {
-      const api = env.getAPIList().get('Perform Assignment Action');
-      await selectPassportType.executeSelectPassportType(api, id);
-    });
-
-    await test.step('Step 4: Validate passport type in UI', async () => {
-      await selectPassportType.validatePassportType();
-    });
-
-    await test.step('Step 5: Verify case details reflect in API response', async () => {
-      const api = env.getAPIList().get('Get Case Details');
-      await getCaseDetails.executeGetCaseDetailsAPI(api, id);
-    });
+  test('Login into UCC application', async () => {
+    const inputData = env.getInputData();
+    await loginWorkflow.login(inputData.get('username'), inputData.get('password'));
   });
+
+  test('UCC Search - true', async () => {
+    test.setTimeout(30000);
+
+    const api = env.getAPIList().get('Get Order Details');
+    const uccSearchAPI = env.getAPIList().get('UCC Search - True');
+    const getCaseDetails = env.getAPIList().get('Get Case Details');
+    const runtimeData = {
+      orderId: 'O-273225' // Replace this with actual ID
+    };
+
+    // Call and store result from executeGetOrderDetails
+    const result = await getOrderDetails.executeGetOrderDetails(api, runtimeData);
+
+    // Dtore them back into runtimeData if needed
+    runtimeData.orderId = result.id;
+    runtimeData.groupId = extractGroupId(groupId);
+
+    // Pass the updated runtimeData to the next method
+    await getOrderDetails.searchAndValidateOrder(extractOrderId(runtimeData.orderId), runtimeData.groupId, uccSearchAPI, runtimeData, getCaseDetails);
+  });
+
 });
+

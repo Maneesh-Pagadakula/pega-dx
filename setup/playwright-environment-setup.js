@@ -51,7 +51,7 @@ export class PlaywrightEnvironmentSetup {
         throw new Error(`Unsupported browser: ${browserName}`);
     }
 
-    this.browser = await browserType.launch({ headless: false });
+    this.browser = await browserType.launch({ headless: config.Headless });
     this.context = await this.browser.newContext();
     this.page = await this.context.newPage();
 

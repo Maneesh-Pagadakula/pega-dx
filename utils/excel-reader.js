@@ -24,7 +24,9 @@ export class ExcelReader {
         api.payload &&
         !api.payload.trim().startsWith('{')
       ) {
-        api.payload = this.loadJsonPayload(api.payload.trim());
+          const { content, fullPath } = this.loadJsonPayload(api.payload.trim());
+      api.payload = content;
+      api.payloadPath = fullPath;  // ← Assign the file path
       }
 
       if (api.scenario) {
@@ -55,6 +57,7 @@ export class ExcelReader {
     if (!fs.existsSync(fullPath)) {
       throw new Error(`Payload file not found: ${fullPath}`);
     }
-    return fs.readFileSync(fullPath, 'utf-8');
+  const content = fs.readFileSync(fullPath, 'utf-8');
+  return { content, fullPath }; // ← return both
   }
 }

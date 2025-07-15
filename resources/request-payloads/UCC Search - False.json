@@ -1,0 +1,16 @@
+{
+    "content":{
+        "IsUCCSearchComplete" : "false",
+        "ReasonUnableToObtain" : "Copy Cost Approval Required",
+        "CopyCostApprovalReason" : "ESTCOST",
+        "TotalNumberOfCopies" : "100",
+        "NumberOfFindings" : "100",
+        "ApproximateCost" : "100",
+        "NumberOfCopiesPulled": "100",
+        "NumberOfFilingsLeftToMake" : "100",
+        "FollowUp": "100",
+        "PendOrderLine" : "true",
+        "PendReason" : "Pending - Customer Response",
+        "PendedDate" : "20250720T131811.315 GMT"
+    }
+}

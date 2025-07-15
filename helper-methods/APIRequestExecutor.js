@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import https from 'https';
 export class APIRequestExecutor {
   static async request(method, url, headers = {}, body = null) {
     try {
@@ -7,23 +7,24 @@ export class APIRequestExecutor {
         method,
         url,
         headers,
-        data: body
+        data: body,
+        httpsAgent: new https.Agent({rejectUnauthorized: false})
       });
 
-      console.log('API Request Success:', {
-        method,
-        url,
-        status: response.status,
-        headers: response.headers,
-        data: response.data,
-      });
-
-      return {
-        status: response.status,
-        headers: response.headers,
-        body: response.data,
-        json: () => response.data
-      };
+       return {
+        status: response.status || 500,
+        headers: response.headers || {},
+        body: response.data || error.message,
+        json: () => {
+          try {
+            return typeof response.data === 'string'
+              ? JSON.parse(response.data)
+              : response.data;
+          } catch {
+            return null;
+          }
+        }
+       }
     } catch (error) {
       const response = error.response || {};
       console.error('API Request Failed:', {
@@ -53,10 +54,10 @@ export class APIRequestExecutor {
 
   // 🔧 Add shorthand helpers
   static get(url, headers = {}) {
-    return this.request('get', url, headers);
+    return this.request('GET', url, headers);
   }
 
-  static post(url, headers = {}, body = null) {
+  static post(url, headers = {}, body) {
     return this.request('post', url, headers, body);
   }
 

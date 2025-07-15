@@ -29,7 +29,7 @@ export class CreateCase extends PlaywrightActions {
     } catch (e) {
       this.log(`API call failed with message - <br>${e.message}<br>, could not create a new case`);
       console.log(e.message);
-      throw new Error("Workflow of creating a new case using DIX-API failed");
+      throw new Error("Workflow of creating a new case using DX-API failed");
     }
   }
 }

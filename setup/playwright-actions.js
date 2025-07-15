@@ -7,14 +7,19 @@ export class PlaywrightActions extends PlaywrightEnvironmentSetup {
     super();
   }
 
-  async enterValue(selector, valueToEnter) {
-    try {
-      await this.page.fill(selector, valueToEnter);
-      this.log(`Entered value: ${valueToEnter}`);
-    } catch (e) {
-      await this.logWithScreenshot(`Failed to enter value: ${valueToEnter}<br>Exception: ${e.message}`, this.page);
-    }
+  async enterValue(selector, valueToEnter, targetContext = this.page) {
+  try {
+    const context = targetContext || this.page;
+    await context.fill(selector, valueToEnter);
+
+    await this.log(`Entered value: <b>${valueToEnter}</b>`);
+    console.log(`[LOG] Entered value: ${valueToEnter}`);
+  } catch (e) {
+    await this.logWithScreenshot(`Failed to enter value: <b>${valueToEnter}</b><br>Exception: ${e.message}`, targetContext || this.page);
+    console.log(`[FAIL] Failed to enter value - ${valueToEnter} due to ${e.message}`);
   }
+}
+
 
   async enterPassword(selector, passwordValue) {
     await this.enterValue(selector, passwordValue);
@@ -48,17 +53,32 @@ export class PlaywrightActions extends PlaywrightEnvironmentSetup {
     try {
       await this.page.click(selector);
       this.log(`Clicked on: ${elementName}`);
+      console.log(`[LOG] Clicked on: ${elementName}`);
     } catch (e) {
       await this.logWithScreenshot(`Failed to click on: ${elementName}<br>Exception: ${e.message}`, this.page);
+      console.log(`[FAIL] Couldn't click on - ${elementName} due to ${e.message}`);
     }
   }
 
   async jsClick(selector, elementName) {
+    // try {
+    //   await this.page.$eval(selector, el => el.click());
+    //   this.log(`JS clicked on: ${elementName}`);
+    // } catch (e) {
+    //   await this.logWithScreenshot(`Failed to JS click on: ${elementName}<br>Exception: ${e.message}`, this.page);
+    // }
     try {
-      await this.page.$eval(selector, el => el.click());
-      this.log(`JS clicked on: ${elementName}`);
+      await this.page.$eval(selector, el => {
+        const event = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        });
+        el.dispatchEvent(event);
+      });
+      this.log(`Enhanced JS clicked on: ${elementName}`);
     } catch (e) {
-      await this.logWithScreenshot(`Failed to JS click on: ${elementName}<br>Exception: ${e.message}`, this.page);
+      await this.logWithScreenshot(`Enhanced JS click failed for: ${elementName}<br>Exception: ${e.message}`, this.page);
     }
   }
 
@@ -66,9 +86,11 @@ export class PlaywrightActions extends PlaywrightEnvironmentSetup {
     try {
       if (await this.page.locator(selector).isVisible()) {
         this.log(`Element displayed: ${elementName}`);
+        console.log(`[LOG] Element displayed: ${elementName}`);
       }
     } catch (e) {
       await this.logWithScreenshot(`Element not displayed: ${elementName}<br>Exception: ${e.message}`, this.page);
+        console.log(`[FAIL] Failed to display element - ${elementName} due to ${e.message}`);
     }
   }
 
@@ -127,9 +149,12 @@ export class PlaywrightActions extends PlaywrightEnvironmentSetup {
     try {
       const text = (await this.page.textContent(selector)).trim();
       this.log(`Text from ${elementName}: ${text}`);
+      console.log(`[LOG] Extracted text - ${elementName}`);
       return text;
     } catch (e) {
       await this.logWithScreenshot(`getText failed for ${elementName}: ${e.message}`, this.page);
+      
+      console.log(`[FAIL] Failed to extract text from - ${elementName} due to ${e.message}`);
       return null;
     }
   }
@@ -240,4 +265,201 @@ export class PlaywrightActions extends PlaywrightEnvironmentSetup {
   fillPlaceholder(locator, value) {
     return value && value.trim() ? locator.replace('%s', value) : locator;
   }
+
+  async waitForElement(selector, elementName, time) {
+    try {
+      await this.page.waitForSelector(selector, {
+        state: 'visible',
+        timeout: time * 1000
+      });
+      await this.log(`Element visible: ${elementName}`);
+    } catch (e) {
+      await this.logWithScreenshot(`Element not visible: ${elementName}<br>Exception: ${e.message}`, this.page);
+      throw new Error(`Timeout waiting for element: ${elementName}`);
+    }
+  }
+  async clickAndSwitchToNewTab(selector, elementName) {
+    try {
+      const newPagePromise = this.page.context().waitForEvent('page');
+      await this.page.click(selector); // triggers new tab
+      await this.wait(5);
+
+      const newPage = await newPagePromise;
+
+      await newPage.waitForLoadState('domcontentloaded');
+      await newPage.waitForLoadState('networkidle');
+      this.page = newPage;
+
+      await this.log(`Switched to new page with URL: ${newPage.url()}`);
+      console.log(`[LOG] Clicked and switched to the active tab with the URL - ${newPage.url()}`)
+    } catch (e) {
+      await this.logWithScreenshot(`Failed to switch after clicking '${elementName}': ${e.message}`, this.page);
+       console.log(`[FAIL] Failed to click and switch to the active tab due to ${e.message}`)
+      throw e;
+    }
+  }
+
+
+
+  async switchBackToPreviousTab() {
+    try {
+      if (this.pageStack.length > 0) {
+        this.page = this.pageStack.pop(); // go back
+        await this.logWithScreenshot('Switched back to previous tab', this.page);
+      } else {
+        this.log('No previous tab to switch back to');
+      }
+    } catch (e) {
+      await this.logWithScreenshot(`Failed to switch back: ${e.message}`, this.page);
+    }
+  }
+
+  async closeCurrentTabAndSwitchBack() {
+    try {
+      await this.page.close();
+      this.log('Closed current tab');
+      await this.switchBackToPreviousTab();
+    } catch (e) {
+      await this.logWithScreenshot(`Failed to close and switch back: ${e.message}`, this.page);
+    }
+  }
+
+  async switchToFrameByNameOrTitle(identifier) {
+  try {
+    await this.log(`Attempting to switch to frame using identifier: <b>${identifier}</b>`);
+    console.log(`[LOG] Attempting to switch to frame: ${identifier}`);
+
+    let frame = this.page.frame({ name: identifier });
+
+    // Fallback: find by partial match in all frames
+    if (!frame) {
+      const frames = this.page.frames();
+      frame = frames.find(f =>
+        f.name()?.includes(identifier)
+      );
+    }
+
+    if (!frame) {
+      await this.logWithScreenshot(`Frame not found with identifier: <b>${identifier}</b>`, this.page);
+      console.log(`[FAIL] No frame found using identifier: ${identifier}`);
+      return null;
+    }
+
+    await this.log(`witched to frame: <b>${identifier}</b>`);
+    console.log(`[LOG] Successfully switched to frame: ${identifier}`);
+    return frame;
+
+  } catch (e) {
+    await this.logWithScreenshot(`Error while switching to frame <b>${identifier}</b>: ${e.message}`, this.page);
+    console.log(`[FAIL] Error occured when trying to switch to frame - ${identifier} due to ${e.message}`);
+    return null;
+  }
+}
+async switchToFrameInsideSelector(containerSelector, iframeSelector, frameName = '') {
+  try {
+    await this.log(`Looking for iframe inside: <b>${containerSelector}</b>`);
+    const container = this.page.locator(containerSelector);
+
+    await container.waitFor({ state: 'visible', timeout: 10000 });
+
+    const iframeElement = container.locator(iframeSelector);
+    await iframeElement.waitFor({ state: 'attached', timeout: 10000 });
+
+    const elementHandle = await iframeElement.elementHandle();
+  const frame = await elementHandle?.contentFrame();
+
+
+    if (!frame) {
+      await this.logWithScreenshot(`Failed to retrieve frame object inside ${containerSelector}`, this.page);
+      console.log(`[FAIL] Couldn't get frame object inside container: ${containerSelector}`);
+      return null;
+    }
+
+    await this.log(`Switched to iframe ${frameName || 'inside selector'}`);
+    console.log(`[LOG] Successfully switched to iframe ${frameName || ''} inside: ${containerSelector}`);
+    return frame;
+
+  } catch (e) {
+    await this.logWithScreenshot(`Error while switching to iframe inside <b>${containerSelector}</b>: ${e.message}`, this.page);
+    console.log(`[FAIL] Error while switching to iframe inside ${containerSelector}: ${e.message}`);
+    return null;
+  }
+}
+
+async switchFromFrameToFrame(currentIdentifier, targetIdentifier) {
+  try {
+    await this.log(`Switching from frame <b>${currentIdentifier}</b> to <b>${targetIdentifier}</b>`);
+    console.log(`[LOG] Switching from frame - ${currentIdentifier} to frame - ${targetIdentifier}`);
+
+    const currentFrame = await this.switchToFrameByNameOrTitle(currentIdentifier);
+    if (!currentFrame) {
+      await this.log(`Current frame not found: <b>${currentIdentifier}</b>. Cannot switch.`);
+      console.log(`[FAIL] Current frame not found: ${currentIdentifier}`);
+      return null;
+    }
+
+    const targetFrame = await this.switchToFrameByNameOrTitle(targetIdentifier);
+    if (!targetFrame) {
+      await this.log(`Target frame not found: <b>${targetIdentifier}</b>. Cannot complete switch.`);
+      console.log(`[FAIL] Target frame not found: ${targetIdentifier}`);
+      return null;
+    }
+
+    await this.log(`Switched from <b>${currentIdentifier}</b> to <b>${targetIdentifier}</b>`);
+    console.log(`[LOG] Successfully switched to target frame: ${targetIdentifier}`);
+    return targetFrame;
+
+  } catch (e) {
+    await this.logWithScreenshot(`Error while switching frames from <b>${currentIdentifier}</b> to <b>${targetIdentifier}</b>: ${e.message}`, this.page);
+    console.log(`[FAIL] Error while switching frames - ${e.message}`);
+    return null;
+  }
+}
+
+async switchBackToMainPage() {
+  try {
+    await this.log('Attempting to switch back to the main page (detach from any iframe)');
+    console.log('[LOG] Attempting to switch back to the main page');
+
+    const mainFrame = this.page.mainFrame();
+
+    if (mainFrame) {
+      await this.log('Switched back to the main page context');
+      console.log('[LOG] Main page context is now active');
+      return mainFrame;
+    } else {
+      await this.logWithScreenshot('Main page frame not found while switching back', this.page);
+      console.log('[FAIL] Main frame was not found');
+      return null;
+    }
+
+  } catch (e) {
+    await this.logWithScreenshot(`Error while switching back to main page: ${e.message}`, this.page);
+    console.log(`[FAIL] Error while switching back to main page - ${e.message}`);
+    return null;
+  }
+}
+
+async ifVisibleClick(selector, elementName, timeoutInSeconds = 5, targetContext = this.page) {
+  try {
+    const context = targetContext || this.page;
+    const element = context.locator(selector);
+
+    const isVisible = await element.isVisible({ timeout: timeoutInSeconds * 1000 });
+
+    if (isVisible) {
+      await element.click();
+      await this.log(`✅ Clicked on visible element: <b>${elementName}</b>`);
+      console.log(`[LOG] Clicked on visible element: ${elementName}`);
+    } else {
+      await this.log(`⚠️ Element not visible: <b>${elementName}</b>. Skipping click.`);
+      console.log(`[WARN] Element not visible: ${elementName}`);
+    }
+  } catch (e) {
+    await this.logWithScreenshot(`❌ Failed to click on: <b>${elementName}</b><br>Exception: ${e.message}`, targetContext || this.page);
+    console.log(`[FAIL] Failed to click on ${elementName} due to ${e.message}`);
+  }
+}
+
+
 }
