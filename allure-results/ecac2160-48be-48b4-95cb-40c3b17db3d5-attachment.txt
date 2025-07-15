@@ -1,0 +1,14 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278466
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278466</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278466
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117035
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117035!SEARCH?actionID=CompleteSearch
+[FAIL] UCC Search - True workflow failed - couldn't construct/hit the 'UCC Search - true' API - 
+ statusCode is not defined

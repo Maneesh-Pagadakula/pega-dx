@@ -1,0 +1,14 @@
+{ Key: 'Value', username: 'mpagadak', password: 'rules' }
+[LOG] Incremented Values:
+orderId: 9901243
+orderNumber: 9900369573
+Group[0] Line[0] orderLineId: 99142173
+Payload Path C:\Users\mpagadak\Desktop\pega-dx\resources\request-payloads\Create Request.json
+[LOG] Updated payload written to C:\Users\mpagadak\Desktop\pega-dx\resources\request-payloads\Create Request.json
+[LOG] API call prepared for 'Create Order Request' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/fulfillment/v1/fulfillmentOrders////
+[LOG] API call for 'Create Order Request' was executed successfully - 
+ Status Code: 200, 
+ Order ID: O-278483</b>
+[Pass] Invocation 1: Created Order ID → O-278483

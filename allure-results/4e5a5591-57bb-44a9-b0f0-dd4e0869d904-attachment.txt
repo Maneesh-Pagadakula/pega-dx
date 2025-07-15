@@ -1,0 +1,4 @@
+{ Key: 'Value', username: 'mpagadak', password: 'rules' }
+[LOG] Entered value: mpagadak
+[LOG] Entered value: rules
+[LOG] Clicked on: Login Button

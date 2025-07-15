@@ -1,0 +1,29 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-277449
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-277449</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-277449
+[LOG] Extracted GroupIdCSC-CLS-FULFILLMENT-WORK G-116027
+[LOG] Extracted pxCoveredInsKeys from the response
+https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-116027!SEARCH?actionID=CompleteSearch
+[FAIL] UCC Search - True workflow failed - couldn't construct/hit the 'Get Order Details' API - 
+ method is not defined
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HIDFEF18C2F9A5F5825FCB0568A85859328
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Search Box
+[LOG] Entered value: O-277449
+[LOG] Clicked on: Search Button (magnifiying glass icon)
+[LOG] Extracted text - Group Id (O-277449)
+Order ID - O-277449 has been found
+Validating if corresponding groupId exists for the orderId found
+[LOG] Element displayed: Group Id (G-116027)
+[LOG] Extracted text - Group Id (G-116027)
+Group ID - G-116027 has been found
+[LOG] Clicked on: Link - Group Id - G-116027
+[LOG] Navigated successfully to 'Group Case - G-116027' page
+Handle exists in iframe? true
+Search Action exists in iframe? true
+Match: Extracted text and Current Stage Label are the same -> Search

@@ -1,0 +1,13 @@
+{ Key: 'Value', username: 'mpagadak', password: 'rules' }
+[LOG] Incremented Values:
+orderId: 9901241
+orderNumber: 9900369571
+Group[0] Line[0] orderLineId: 99142171
+Payload Path C:\Users\mpagadak\Desktop\pega-dx\resources\request-payloads\Create Request.json
+[LOG] Updated payload written to C:\Users\mpagadak\Desktop\pega-dx\resources\request-payloads\Create Request.json
+[LOG] API call prepared for 'Create Order Request' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/fulfillment/v1/fulfillmentOrders////
+[FAIL] API call for 'Create Order Request' failed - 
+ Status Code: 500, 
+ Message: Duplicate Order

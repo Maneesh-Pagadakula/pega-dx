@@ -1,0 +1,18 @@
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/fulfillment/v1/fulfillmentOrders////',
+  status: 500,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=C404A601948ABF4E349C5606C7973F72; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    highestreturncode: '05',
+    haserrors: 'true',
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '52',
+    date: 'Tue, 15 Jul 2025 08:20:12 GMT',
+    connection: 'close'
+  },
+  data: { errors: [ [Object] ] }
+}

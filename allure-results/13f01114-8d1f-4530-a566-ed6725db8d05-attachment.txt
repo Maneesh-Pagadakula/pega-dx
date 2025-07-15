@@ -1,0 +1,23 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278466
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278466</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278466
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117035
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117035!SEARCH?actionID=CompleteSearch
+[FAIL] UCC Search - True workflow failed - couldn't construct/hit the 'UCC Search - true' API - 
+ statusCode is not defined
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HID29790690CC6B5AD5C5C0FB786CD50269
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Sidebar Option - Search
+[LOG] Element displayed: iFrame - Search Page
+[LOG] Attempting to switch to frame: PegaGadget3Ifr
+Logged with screenshot: C:\Users\mpagadak\Desktop\pega-dx\reports\latest\allure-results\screenshots\Screenshot_35bcd3b0-e42a-46d2-8be7-d8822abd9d6d.png
+[FAIL] No frame found using identifier: PegaGadget3Ifr
+[WARN] Element not visible: Textbox - Case ID
