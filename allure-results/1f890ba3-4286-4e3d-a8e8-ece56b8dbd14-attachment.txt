@@ -1,0 +1,9 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278478
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278478</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278478
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK AR-290964,CSC-CLS-FULFILLMENT-WORK GSTA-133252,CSC-CLS-FULFILLMENT-WORK GSTA-133253
+[LOG] Extracted pxCoveredInsKeys from the response

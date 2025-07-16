@@ -1,0 +1,33 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278470</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117039
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch
+[FAIL] API call for 'UCC Search - True' failed - 
+ Status Code: 404, 
+ Message: Assignment not found for the given parameter ID
+[LOG] API call prepared for 'Get Attachment ID' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/attachments/upload
+[LOG] Attachment uploaded → Status: 201, ID: 95189cb3-2d6a-4379-9e66-9cc1076b70bb
+[LOG] Attachment Id - 95189cb3-2d6a-4379-9e66-9cc1076b70bb
+Uploading attachment to → https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK G-117039/attachments with payload - {"attachments":[{"type":"File","category":"Evidence","ID":"95189cb3-2d6a-4379-9e66-9cc1076b70bb"}]}
+[LOG] Attachment uploaded. Status: 201
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HID23D8CBA541FB0C7236BB4D6F81D1A783
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Sidebar Option - Search
+[LOG] Element displayed: iFrame - Search Page
+[LOG] Successfully switched to iframe PegaGadget3Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main
+[LOG] Clicked on visible element: Textbox - Case ID
+[LOG] Entered value: G-117039
+[LOG] Clicked on visible element: Button - Open
+[LOG] Navigated successfully to 'Group Case - G-117039' page
+[LOG] Successfully switched to iframe PegaGadget2Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main//div[@id="module2"]//div[@id="PegaWebGadget2"]

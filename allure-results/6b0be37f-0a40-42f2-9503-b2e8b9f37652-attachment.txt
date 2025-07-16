@@ -1,0 +1,2 @@
+[WARN] Element NOT displayed: Text - Results (Current Stage)
+[ERROR] Exception in 'Get Case Details': status is not defined

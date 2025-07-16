@@ -1,0 +1,43 @@
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=97F41D88D7151B6A12849B21F86BB64F; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '333',
+    date: 'Wed, 16 Jul 2025 03:07:51 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[WARN] Element NOT displayed: Button - Begin
+[WARN] Element NOT displayed: Text - Results (Current Stage)
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK UDEB-85698!RESULTS_FLOW?actionID=pyContinueAfterWait',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=7F4C70E975312F975D9A5750BD42DE30; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '434',
+    date: 'Wed, 16 Jul 2025 03:08:25 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[FAIL] Submit Line Case failed - Assignment not found for the given parameter ID

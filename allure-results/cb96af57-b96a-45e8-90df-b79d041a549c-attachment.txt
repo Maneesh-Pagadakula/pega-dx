@@ -1,0 +1,23 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278470</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117039
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch
+[FAIL] API call for 'UCC Search - True' failed - 
+ Status Code: 404, 
+ Message: Assignment not found for the given parameter ID
+[LOG] API call prepared for 'Get Attachment ID' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/attachments/upload
+[LOG] Attachment uploaded → Status: 201, ID: ab89ed35-a2c3-4904-9fa1-ddd150066b70
+[LOG] Attachment Id - ab89ed35-a2c3-4904-9fa1-ddd150066b70
+Uploading attachment to → https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK G-117039/attachments with payload - {"attachments":[{"type":"File","category":"Evidence","ID":"ab89ed35-a2c3-4904-9fa1-ddd150066b70"}]}
+[LOG] Attachment uploaded. Status: 201
+[LOG] Clicked on: Launch Portal (Rocket Icon)

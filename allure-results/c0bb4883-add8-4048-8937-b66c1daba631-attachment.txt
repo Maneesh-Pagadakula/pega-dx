@@ -1,0 +1,23 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278484
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278484</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278484
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-118030
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - False' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-118030!SEARCH?actionID=CompleteSearch
+[FAIL] Unexpected response returned → Status Code: 400
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HIDDD5864A18F7205C933E81D60D6F3695B
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Sidebar Option - Search
+[LOG] Element displayed: iFrame - Search Page
+[LOG] Successfully switched to iframe PegaGadget3Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main
+[LOG] Clicked on visible element: Textbox - Case ID
+[LOG] Entered value: G-118030
+[LOG] Clicked on visible element: Button - Open
+[LOG] Successfully switched to iframe PegaGadget2Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main//div[@id="module2"]//div[@id="PegaWebGadget2"]

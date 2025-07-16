@@ -1,0 +1,6 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278567
+[FAIL] API call for 'Get Order Details' failed - 
+ Status Code: 404, 
+ Message: Case not found for the given parameter ID

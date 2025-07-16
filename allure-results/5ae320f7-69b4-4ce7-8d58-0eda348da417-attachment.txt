@@ -1,0 +1,54 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278471
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278471</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278471
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117040
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117040!SEARCH?actionID=CompleteSearch
+[LOG] API call for 'UCC Search - True' was executed successfully - 
+ Status Code: 200, 
+ Order ID: undefined</b>
+[LOG] API call prepared for 'Get Attachment ID' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/attachments/upload
+[LOG] Attachment uploaded → Status: 201, ID: 25c27ca2-9e82-42e3-b3c1-22c832869d85
+[LOG] Attachment Id - 25c27ca2-9e82-42e3-b3c1-22c832869d85
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HIDA37CB4E266526B618C7DFA34FEFA6F27
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Sidebar Option - Search
+[LOG] Element displayed: iFrame - Search Page
+[LOG] Successfully switched to iframe PegaGadget3Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main
+[LOG] Clicked on visible element: Textbox - Case ID
+[LOG] Entered value: G-117040
+[LOG] Clicked on visible element: Button - Open
+[LOG] Navigated successfully to 'Group Case - G-117040' page
+[LOG] Successfully switched to iframe PegaGadget2Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main//div[@id="module2"]//div[@id="PegaWebGadget2"]
+[LOG] Extracted text - Text - Results (Current Stage): Results
+[LOG] Is Results Action Type is present in the current page? true
+[LOG] API call prepared for 'Get Case Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK G-117040
+[LOG] 'Get Case Details' successful - Status Code: 200
+[LOG] pxCurrentStageLabel: Results
+[LOG] Line Case ID (pyID): UDEB-85699
+Match: Extracted text and Current Stage Label are the same -> Results
+[LOG] Count for Attachments Conatiner: 0
+[LOG] Initial Attachment Count: 0
+Uploading attachment to → https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK G-117040/attachments with payload - {"attachments":[{"type":"File","category":"Evidence","ID":"25c27ca2-9e82-42e3-b3c1-22c832869d85"}]}
+[LOG] Attachment uploaded. Status: 201
+[LOG] Element displayed: Button - Anytime Actions
+[LOG] Clicked on visible element: Button - Anytime Actions
+[LOG] Element displayed: Option - Refresh (Anytime Action)
+[LOG] Clicked on visible element: Option - Refresh (Anytime Action)
+[LOG] Successfully switched to iframe PegaGadget2Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main//div[@id="module2"]//div[@id="PegaWebGadget2"]
+[LOG] Count for Attachments Conatiner: 1
+[LOG] Updated Attachment Count: 1
+[PASS] Attachment uploaded successfully. Count increased from 0 to 1
+[LOG] Submitting Line Case (pyID: UDEB-85699 on Endpoint: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK UDEB-85699!RESULTS_FLOW?actionID=pyContinueAfterWait
+[PASS] Line case submitted successfully. Next Page: Confirm

@@ -1,0 +1,48 @@
+[LOG] API call prepared for 'Get Order Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] API call for 'Get Order Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK O-278470</b>
+[LOG] Extracted OrderID - CSC-CLS-FULFILLMENT-WORK O-278470
+[LOG] Extracted GroupId - CSC-CLS-FULFILLMENT-WORK G-117039
+[LOG] Extracted pxCoveredInsKeys from the response
+[LOG] API call prepared for 'UCC Search - True' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch
+[FAIL] API call for 'UCC Search - True' failed - 
+ Status Code: 404, 
+ Message: Assignment not found for the given parameter ID
+[LOG] API call prepared for 'Get Attachment ID' - 
+ Method: POST, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/attachments/upload
+[WARN] File path missing or invalid. Skipping upload.
+[LOG] Attachment Id - null
+[LOG] Clicked on: Launch Portal (Rocket Icon)
+[LOG] Clicked and switched to the active tab with the URL - https://ifulfill-dev.cscglobal.com/prweb/app/CLSFulfillment/T2YWA9MhxITceMJAmA20TGdKC2RPYGsoqT--9dIvR58*/!STANDARD?pyActivity=%40baseclass.pzProcessURLInWindow&pyPreActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal_pyCaseWorker&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DpyCaseWorker%26Name%3D%20pyCaseWorker%26pzSkinName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal_pyCaseWorker%26launchPortal%3Dtrue&bPurgeTargetThread=true&target=popup&portalThreadName=STANDARD&portalName=Developer&pzHarnessID=HIDD04EA5C47F7522AC8FA84BA4094AF54D
+Navigated to "Order Fulfillment" page
+[LOG] Clicked on: Sidebar Option - Search
+[LOG] Element displayed: iFrame - Search Page
+[LOG] Successfully switched to iframe PegaGadget3Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main
+[LOG] Clicked on visible element: Textbox - Case ID
+[LOG] Entered value: G-117039
+[LOG] Clicked on visible element: Button - Open
+[WARN] Element not visible: Button - Begin
+[LOG] Navigated successfully to 'Group Case - G-117039' page
+[LOG] Successfully switched to iframe PegaGadget2Ifr inside: //div[@data-portalharnessinsname="Data-Portal!pyCaseWorker"]//main//div[@id="module2"]//div[@id="PegaWebGadget2"]
+[LOG] Element displayed: Text - Results (Current Stage)
+[LOG] Extracted the text Results from Text - Results (Current Stage)
+[LOG] Is Results Action Type is present in the current page? true
+[LOG] API call prepared for 'Get Case Details' - 
+ Method: GET, 
+ URL: https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK G-117039
+[LOG] API call for 'Get Case Details' was executed successfully - 
+ Status Code: 200, 
+ Order ID: CSC-CLS-FULFILLMENT-WORK G-117039</b>
+[LOG] Current Stage of the application was extracted successfully - Results
+Match: Extracted text and Current Stage Label are the same -> Results
+Logged with screenshot: C:\Users\mpagadak\Desktop\pega-dx\reports\latest\allure-results\screenshots\Screenshot_fda62168-5803-428c-b8b7-7d6d078bdf67.png
+[FAIL] Error while switching to iframe inside //div[@data-portalharnessinsname="Data-Portal-DesignerStudio!pzStudio"]//main//div[@id="PEGA_TABBED0"]//div[@id="PegaWebGadget1"]: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//div[@data-portalharnessinsname="Data-Portal-DesignerStudio!pzStudio"]//main//div[@id="PEGA_TABBED0"]//div[@id="PegaWebGadget1"]') to be visible
+

@@ -1,0 +1,3 @@
+[WARN] Element NOT displayed: Button - Begin
+[WARN] Element NOT displayed: Text - Results (Current Stage)
+[ERROR] API configuration for 'Invoicing Failure' not found.

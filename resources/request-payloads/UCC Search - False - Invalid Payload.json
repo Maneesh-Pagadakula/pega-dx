@@ -1,0 +1,12 @@
+{
+    "content":{
+        "IsUCCSearchComplete" : "false",
+        "ReasonUnableToObtain" : "Copy Cost Approval Required",
+        "CopyCostApprovalReason" : "ESTCOST",
+        "TotalNumberOfCopies" : "100",
+        "ApproximateCost" : "100",
+        "NumberOfCopiesPulled": "100",
+        "FollowUp": "100",
+        "PendOrderLine" : "true"
+    }
+}

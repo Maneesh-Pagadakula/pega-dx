@@ -1,0 +1,21 @@
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-118033!SEARCH?actionID=CompleteSearch',
+  status: 400,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=5FB70945B4777F144613DFD24D8F865C; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '654',
+    date: 'Wed, 16 Jul 2025 06:04:38 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[WARN] Element NOT displayed: Text - Results (Current Stage)

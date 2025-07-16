@@ -1,0 +1,25 @@
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=DD017A9ADAFC3C6618119980BB53C62C; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '333',
+    date: 'Wed, 16 Jul 2025 01:40:48 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[WARN] Element NOT displayed: Button - Begin
+[WARN] Element NOT displayed: Text - Results (Current Stage)
+[WARN] Element NOT displayed: Button - Anytime Actions
+[WARN] Element NOT displayed: Option - Refresh (Anytime Action)
+[FAIL] Attachment upload might have failed. Count stayed at 0

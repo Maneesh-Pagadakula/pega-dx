@@ -1,0 +1,44 @@
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK G-117039!SEARCH?actionID=CompleteSearch',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=63D2AEA84CD045206867A6458C50A8D5; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '333',
+    date: 'Wed, 16 Jul 2025 03:26:28 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[WARN] Element NOT displayed: Button - Begin
+[WARN] Element NOT displayed: Text - Results (Current Stage)
+API Request Failed: {
+  method: 'post',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/assignments/ASSIGN-WORKBASKET CSC-CLS-FULFILLMENT-WORK UDEB-85698!RESULTS_FLOW?actionID=pyContinueAfterWait',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=99C841E6B5A03E6BA4758E0433FD92F1; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '434',
+    date: 'Wed, 16 Jul 2025 03:27:03 GMT',
+    connection: 'close'
+  },
+  data: {
+    pxObjClass: 'Pega-API-CaseManagement-Assignment',
+    errors: [ [Object] ],
+    performAssignmentRequest: { pxObjClass: 'Pega-API-CaseManagement', content: [Object] }
+  }
+}
+[FAIL] Submit Line Case failed - Assignment not found for the given parameter ID
+[ERROR] Exception in Submit Result Stage: Cannot read properties of undefined (reading 'url')

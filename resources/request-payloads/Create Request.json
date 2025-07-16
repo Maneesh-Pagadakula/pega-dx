@@ -1,0 +1,543 @@
+{
+  "deliveryInstructions": [],
+  "createdDateTime": "2025-06-20T11:04:08.505-0400",
+  "updatedDateTime": "2025-06-20T11:04:08.505-0400",
+  "createdById": "KCLARK3",
+  "updatedById": "KCLARK3",
+  "orderingAccountNumber": "7666995",
+  "orderingContactNumber": "3111929",
+  "accountNumber": "7666995",
+  "branchCode": "WIL",
+  "transactionalBillingAccountNumber": "7666995",
+  "transactionalBillingContactNumber": "3111913",
+  "businessDivisionCode": "C01",
+  "currencyCode": "USD",
+  "orderNumber": 9900369602,
+  "orderReceivedViaCode": null,
+  "orderReference": {
+    "sourceName": "Max",
+    "sourceReferencePurposeValue": null,
+    "sourceTypeCode": "Application",
+    "identifiers": [
+      {
+        "identifierLabelValue": "orderId",
+        "identifierValue": "9901201",
+        "sequence": 1,
+        "identifierSetValue": 0
+      }
+    ]
+  },
+  "orderStatusCode": "BOOKED",
+  "ownedById": null,
+  "paymentTermCode": "NET_TERMS_30",
+  "serviceType": "Financial",
+  "orderLineGroups": [
+    {
+      "neededByDate": null,
+      "orderLineGroupSequenceNumber": 0,
+      "groupNumber": 0,
+      "subject": {
+        "subjectName": "Yoda may",
+        "subjectType": "ENTITY",
+        "managementTypeCode": "UNMANAGED",
+        "subjectClass": null,
+        "subjectJurisdictions": null,
+        "answers": [],
+        "subjects": null,
+        "subjectFirstName": null,
+        "subjectMiddleName": null,
+        "subjectLastName": null,
+        "subjectSuffix": null
+      },
+      "answers": [],
+      "orderLines": [
+        {
+          "jurisdictionOrganizationId": null,
+          "orderLineId": 99142202,
+          "orderLineItems": [],
+          "jurisdiction": {
+            "jurisId": 1,
+            "jurisCode": "AL",
+            "jurisName": "Alabama",
+            "jurisType": "STATE",
+            "stateCode": "AL",
+            "countryCode": "USA"
+          },
+          "answers": [
+            {
+              "questionCode": "FULLBUSNME",
+              "questionText": "Full Business Name",
+              "answerText": "Yoda may",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": false,
+              "stringAnswer": "Yoda may",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "RUSHORDER",
+              "questionText": "Rush Order",
+              "answerText": "Yes",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": null,
+              "booleanAnswer": true,
+              "type": "BOOLEAN"
+            },
+            {
+              "questionCode": "INCLLAPSEFILING",
+              "questionText": "Include Lapsed Filings",
+              "answerText": "All Records",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": false,
+              "stringAnswer": "All Records",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "USESTARTDATE",
+              "questionText": "Use Start Date",
+              "answerText": null,
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": false,
+              "stringAnswer": null,
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "EMAILRESULTS",
+              "questionText": "Email Results To",
+              "answerText": "yamini.arram@cscglobal.com; IT-TANGO-DEV@cscglobal.com",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": "{\"RetrieveSearchOnline\":false,\"ToOption\":\"Custom\",\"EmailAddressesTo\":\"yamini.arram@cscglobal.com\",\"EmailAddressesCc\":\"IT-TANGO-DEV@cscglobal.com\"}",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "SPECIALINSTRUCT",
+              "questionText": "Special Instructions",
+              "answerText": null,
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": false,
+              "stringAnswer": null,
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "RECURRINGSEARCH",
+              "questionText": "Set as Recurring",
+              "answerText": "No",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": "No",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "RUSHLEVEL1AND2CUSTOMER",
+              "questionText": "Rush Level 1 And 2 Customer",
+              "answerText": "Level 2",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": "Level 2",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "COPYCOSTAPPROVAL",
+              "questionText": "Copy Cost Approval",
+              "answerText": "27",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": false,
+              "stringAnswer": "27",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "RESEARCHFEEAPPROVAL",
+              "questionText": "Research Fee Approval",
+              "answerText": "57",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": "57",
+              "booleanAnswer": null,
+              "type": "STRING"
+            },
+            {
+              "questionCode": "CSCWILLRUN",
+              "questionText": "CSC Will Run",
+              "answerText": "Yes",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": null,
+              "booleanAnswer": true,
+              "type": "BOOLEAN"
+            },
+            {
+              "questionCode": "SEARCH",
+              "questionText": "SEARCH URL",
+              "answerText": "https://uccdev.cscglobal.com/internalSearch/46d5b975-3c41-4c13-910d-73e739e74239",
+              "questionCategory": "UCC_SEARCH",
+              "internalOnly": true,
+              "stringAnswer": "https://uccdev.cscglobal.com/internalSearch/46d5b975-3c41-4c13-910d-73e739e74239",
+              "booleanAnswer": null,
+              "type": "STRING"
+            }
+          ],
+          "orderLineSequenceNumber": 0,
+          "orderLineStatusCode": "BOOKED",
+          "providingSupplier": {
+            "supplierId": 4198,
+            "supplierName": "Secretary Of State",
+            "supplierAliasName": null,
+            "supplierSite": {
+              "supplierSiteId": 3579,
+              "supplierSiteAddress": {
+                "supplierContacts": [],
+                "cityName": "Montgomery",
+                "addressLine1Text": "770 Washington Avenue",
+                "countryCode": "USA",
+                "postalCode": "36104",
+                "stateProvinceCode": "AL",
+                "addressReference": {
+                  "sourceName": "POPS",
+                  "sourceReferencePurposeValue": "FulfillmentOrder.AddressReference",
+                  "sourceTypeCode": "Application",
+                  "identifiers": [
+                    {
+                      "identifierLabelValue": "physicalAddressId",
+                      "identifierValue": "3579",
+                      "sequence": 1,
+                      "identifierSetValue": 1
+                    }
+                  ]
+                }
+              }
+            },
+            "fipsCode": null
+          },
+          "serviceCode": "DEBTRLIEN",
+          "serviceCategoryCode": "LIENLITSRCH",
+          "serviceName": "Summary by Debtor (Company)",
+          "orderLineReference": null,
+          "providingSupplierOptions": [
+            {
+              "supplierOptionType": "SupplierCombinationOption",
+              "processingMethod": {
+                "supplierOptionType": "ProcessingMethodOption",
+                "supplierOptionCode": "SELFSERVIH",
+                "supplierOptionLocalName": "Self Service In-house",
+                "supplierSiteTimeZoneCode": "CT",
+                "suppplierSiteDaylightSavingsFlag": false,
+                "jurisCutOffTime": null,
+                "internalCutOffTime": "03:00 PM",
+                "turnAroundTimeMinCount": "48",
+                "turnAroundTimeUOMCode": "HOURS",
+                "supplierOptionId": 3774727
+              },
+              "documentOption": {
+                "supplierOptionType": "DocumentOption",
+                "supplierOptionCode": "LISTONLYPLAIN",
+                "supplierOptionLocalName": "Listing Only - Plain"
+              }
+            }
+          ],
+          "providingSupplierServiceAttributes": [
+            {
+              "supplierServiceAttributeName": "ProcessingExpectedDateIndicator",
+              "supplierServiceAttributeValue": "DATEANDMETHOD",
+              "supplierInstructionValueTypeCode": "STRING"
+            },
+            {
+              "supplierServiceAttributeName": "PrintSingleMultipleIndicator",
+              "supplierServiceAttributeValue": "MULTIPLE",
+              "supplierInstructionValueTypeCode": "STRING"
+            }
+          ],
+          "applicationDocuments": [],
+          "uccFiling": null,
+          "estimatedPricingItem": {
+            "priceItemAmount": 42.9,
+            "sellingUnitCode": "UCC_CSC.SSDEBTRLI.USA.AL.JURISDIRECT",
+            "discountPackageCode": null,
+            "pricingComponents": [
+              {
+                "pricingComponentAmount": 39.9,
+                "pricingComponentDescription": "SERVICE FEE - LIEN/LITIGATION SEARCH - JURIS DIRECT",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "FEE",
+                  "feeCode": "SFUSD",
+                  "feeSubCategoryCode": "SERVICEFEE",
+                  "optional": false,
+                  "description": "SERVICE FEE - LIEN/LITIGATION SEARCH - JURIS DIRECT",
+                  "associatedFees": {
+                    "fees": []
+                  }
+                },
+                "optional": false,
+                "quantity": 1,
+                "discountPricingComponents": [
+                  {
+                    "discountAmount": -7.98,
+                    "discountFlatRateAmount": 0,
+                    "discountMethod": "PERCENT",
+                    "discountPackageCode": null,
+                    "discountPercent": 20,
+                    "discountRuleId": 9646,
+                    "fee": {
+                      "feeDescription": "SERVICE FEE DISCOUNT - LIEN/LITIGATION SEARCH",
+                      "feeCategoryCode": "SDUS",
+                      "feeCode": "SDUS",
+                      "feeSubCategoryCode": "SDUS",
+                      "optional": false,
+                      "description": "SERVICE FEE DISCOUNT - LIEN/LITIGATION SEARCH",
+                      "associatedFees": null
+                    },
+                    "pricingComponentAmount": -7.98,
+                    "pricingComponentDescription": "SERVICE FEE DISCOUNT - LIEN/LITIGATION SEARCH"
+                  }
+                ]
+              },
+              {
+                "pricingComponentAmount": 0,
+                "pricingComponentDescription": "STATUTORY FEE - LIEN/LITIGATION SEARCH",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "COST",
+                  "feeCode": "JFUS",
+                  "feeSubCategoryCode": "JURISFEE",
+                  "optional": false,
+                  "description": "STATUTORY FEE - LIEN/LITIGATION SEARCH",
+                  "associatedFees": {
+                    "fees": []
+                  }
+                },
+                "optional": false,
+                "quantity": 1,
+                "discountPricingComponents": []
+              },
+              {
+                "pricingComponentAmount": 0,
+                "pricingComponentDescription": "VENDOR FEE - LIEN/LITIGATION SEARCH",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "COST",
+                  "feeCode": "VFUS",
+                  "feeSubCategoryCode": "VENDORFEE",
+                  "optional": true,
+                  "description": "VENDOR FEE - LIEN/LITIGATION SEARCH",
+                  "associatedFees": {
+                    "fees": [
+                      {
+                        "feeCode": "PTSSSS",
+                        "feeCategoryCode": "FEE",
+                        "feeSubCategoryCode": "SERVICEFEE",
+                        "description": "CSC Service Fee Component"
+                      },
+                      {
+                        "feeCode": "PTSSSV",
+                        "feeCategoryCode": "COST",
+                        "feeSubCategoryCode": "VENDORFEE",
+                        "description": "Vendor Cost Component"
+                      }
+                    ]
+                  }
+                },
+                "optional": true,
+                "quantity": 1,
+                "discountPricingComponents": []
+              },
+              {
+                "pricingComponentAmount": 15,
+                "pricingComponentDescription": "SERVICE FEE - EXPEDITE FEE- LIEN/LITIGATION SERVICES",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "FEE",
+                  "feeCode": "SFOEX",
+                  "feeSubCategoryCode": "OTHERFEE",
+                  "optional": true,
+                  "description": "SERVICE FEE - EXPEDITE FEE- LIEN/LITIGATION SERVICES",
+                  "associatedFees": {
+                    "fees": [
+                      {
+                        "feeCode": "PTSUF",
+                        "feeCategoryCode": "FEE",
+                        "feeSubCategoryCode": "SERVICEFEE",
+                        "description": "CSC Service Fee Component"
+                      },
+                      {
+                        "feeCode": "PTSUJ",
+                        "feeCategoryCode": "COST",
+                        "feeSubCategoryCode": "JURISFEE",
+                        "description": "Jurisdiction Cost Component"
+                      }
+                    ]
+                  }
+                },
+                "optional": true,
+                "quantity": 1,
+                "discountPricingComponents": []
+              },
+              {
+                "pricingComponentAmount": 10.5,
+                "pricingComponentDescription": "SERVICE FEE - ORDER ENTRY- LIEN/LITIGATION SERVICES",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "FEE",
+                  "feeCode": "SFOOE",
+                  "feeSubCategoryCode": "OTHERFEE",
+                  "optional": true,
+                  "description": "SERVICE FEE - ORDER ENTRY- LIEN/LITIGATION SERVICES",
+                  "associatedFees": {
+                    "fees": []
+                  }
+                },
+                "optional": true,
+                "quantity": 1,
+                "discountPricingComponents": []
+              },
+              {
+                "pricingComponentAmount": 3,
+                "pricingComponentDescription": "SERVICE FEE - PAGE FEE- LIEN/LITIGATION SERVICES",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "FEE",
+                  "feeCode": "SFOPF",
+                  "feeSubCategoryCode": "OTHERFEE",
+                  "optional": false,
+                  "description": "SERVICE FEE - PAGE FEE- LIEN/LITIGATION SERVICES",
+                  "associatedFees": {
+                    "fees": [
+                      {
+                        "feeCode": "PTSSOJ",
+                        "feeCategoryCode": "COST",
+                        "feeSubCategoryCode": "JURISFEE",
+                        "description": "Jurisdiction Cost Component"
+                      },
+                      {
+                        "feeCode": "PTSSOBWC",
+                        "feeCategoryCode": "COST",
+                        "feeSubCategoryCode": "WAIVE",
+                        "description": "Cost Waive Due to Blending"
+                      },
+                      {
+                        "feeCode": "PTSSOS",
+                        "feeCategoryCode": "FEE",
+                        "feeSubCategoryCode": "SERVICEFEE",
+                        "description": "CSC Service Fee Component"
+                      },
+                      {
+                        "feeCode": "PTSSOBWS",
+                        "feeCategoryCode": "FEE",
+                        "feeSubCategoryCode": "WAIVE",
+                        "description": "Service Waive Due to Blending"
+                      }
+                    ]
+                  }
+                },
+                "optional": false,
+                "quantity": 1,
+                "discountPricingComponents": []
+              },
+              {
+                "pricingComponentAmount": 25,
+                "pricingComponentDescription": "SERVICE FEE - RESEARCH - LIEN/LITIGATION SERVICES",
+                "fee": {
+                  "feeDescription": null,
+                  "feeCategoryCode": "FEE",
+                  "feeCode": "SFOR",
+                  "feeSubCategoryCode": "OTHERFEE",
+                  "optional": true,
+                  "description": "SERVICE FEE - RESEARCH - LIEN/LITIGATION SERVICES",
+                  "associatedFees": {
+                    "fees": []
+                  }
+                },
+                "optional": true,
+                "quantity": 1,
+                "discountPricingComponents": []
+              }
+            ]
+          }
+        }
+      ],
+      "fulfillmentInstructionNote": null,
+      "deliveryInstructions": [
+        {
+          "deliveryMethodCode": "EMAIL",
+          "deliveryTypeCode": "COPYCOST",
+          "deliverToAccountNumber": "7666995",
+          "deliverToContactNumber": "3111929",
+          "deliverToContactName": "Clark Kent",
+          "deliverToOrganizationName": "Deno Milliken Dale & Dexter",
+          "emailAddress": "tesrttoanji@gmail.com",
+          "emailCc": "testcc@gmail.com",
+          "returnToBranchFlag": false,
+          "emailSubjectLine": "",
+          "phoneNumber": null,
+          "billingOptionCode": null,
+          "processOptionCode": null,
+          "receivingOptionCode": null,
+          "deliveryAddress": null
+        },
+        {
+          "deliveryMethodCode": "EMAIL",
+          "deliveryTypeCode": "EVIDENCE",
+          "deliverToAccountNumber": "7666995",
+          "deliverToContactNumber": "3111929",
+          "deliverToContactName": "Clark Kent",
+          "deliverToOrganizationName": "Deno Milliken Dale & Dexter",
+          "emailAddress": "yamini.arram@cscglobal.com",
+          "emailCc": "IT-TANGO-DEV@cscglobal.com",
+          "returnToBranchFlag": false,
+          "emailSubjectLine": "",
+          "phoneNumber": null,
+          "billingOptionCode": null,
+          "processOptionCode": null,
+          "receivingOptionCode": null,
+          "deliveryAddress": null
+        }
+      ],
+      "submitToJurisdiction": false
+    }
+  ],
+  "answers": [],
+  "quoteSubmittedDateTime": "2025-06-20T11:04:09.8579821-04:00",
+  "orderPreferences": [],
+  "billingDescriptiveAttributes": [
+    {
+      "attributeName": "Billign Ref 2",
+      "attributeValue": ""
+    },
+    {
+      "attributeName": "Billing Ref 3",
+      "attributeValue": "test"
+    },
+    {
+      "attributeName": "Billing Ref 4",
+      "attributeValue": "test"
+    },
+    {
+      "attributeName": "Billing Ref Test",
+      "attributeValue": "Text"
+    },
+    {
+      "attributeName": "Validator Ref",
+      "attributeValue": "12345"
+    },
+    {
+      "attributeName": "Readonly Required Billing Ref",
+      "attributeValue": ""
+    },
+    {
+      "attributeName": "Required Ref",
+      "attributeValue": "B"
+    }
+  ],
+  "orderingSource": null,
+  "orderId": "9901272",
+  "discriminator": "",
+  "priority": "ONE"
+}

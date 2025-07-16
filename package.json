@@ -1,0 +1,38 @@
+{
+  "name": "pega-dx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "report:generate": "npx allure generate ./reports/latest/allure-results --clean -o ./reports/latest/allure-report",
+    "report:open": "npx allure open ./reports/latest/allure-report",
+    "test:allure": "npx playwright test && npm run report:generate && npm run report:open",
+    "test:allure:spec": "node run-allure.js",
+    "test:html": "npx playwright test",
+    "report:html": "npx playwright show-report ./reports/latest/html-report",
+    "test:html:spec": "npx playwright test tests/dx-test-collection.spec.js --config=setup/playwright.config.js && npm run report:html",
+    "test:html:clean": "if exist reports\\latest (rmdir /s /q reports\\latest) && npm run test:html:spec",
+    "test:html:file": "npx playwright test --config=setup/playwright.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "API and UI Automation for Pega DX using Playwright and JavaScript",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "allure-playwright": "^3.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.34.1",
+    "allure-js-commons": "^3.2.2",
+    "axios": "^1.10.0",
+    "form-data": "^4.0.3",
+    "playwright": "^1.53.1",
+    "properties-reader": "^2.3.0",
+    "uuid": "^11.1.0",
+    "xlsx": "^0.18.5"
+  }
+}

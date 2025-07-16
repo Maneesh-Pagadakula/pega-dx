@@ -1,0 +1,18 @@
+API Request Failed: {
+  method: 'GET',
+  url: 'https://ifulfill-dev.cscglobal.com/prweb/api/v1/cases/CSC-CLS-FULFILLMENT-WORK O-278568',
+  status: 404,
+  headers: Object [AxiosHeaders] {
+    'set-cookie': [
+      'JSESSIONID=C3FC993B581C0A91BEAF5B291960B226; Path=/prweb; Secure; HttpOnly; SameSite=None; SameSite=None',
+      'e643488ef6ae6f526465a0a1581c967d=baef3ad59aac4c4d3dad5b475438c253; path=/; HttpOnly; Secure; SameSite=None'
+    ],
+    'cache-control': 'no-cache',
+    'content-type': 'application/json;charset=UTF-8',
+    'content-length': '174',
+    date: 'Wed, 16 Jul 2025 06:13:21 GMT',
+    connection: 'close'
+  },
+  data: { pxObjClass: 'Pega-API-CaseManagement-Case', errors: [ [Object] ] }
+}
+[FAIL] No valid Order ID was returned. Skipping.

@@ -1,0 +1,128 @@
+# Page snapshot
+
+```yaml
+- link "Go to main content":
+  - /url: "#"
+- link "Go to search bar":
+  - /url: "#"
+- link "Go to navigation":
+  - /url: "#"
+- banner "Top Panel":
+  - navigation:
+    - link "Dev Studio":
+      - /url: "#"
+    - text: "Application:"
+    - link "CLS Fulfillment - August Release":
+      - /url: "#"
+    - button "Application menu": 
+    - link "Configure":
+      - /url: "#"
+    - link "Launch Portal":
+      - /url: "#"
+    - link "Create":
+      - /url: "#"
+    - search:
+      - text: Search text
+      - textbox "Search text"
+      - button "Search"
+      - button "Checked out records"
+    - button "Resources"
+    - button "Toggle branch development"
+    - text: DEVELOPMENT
+  - menubar:
+    - menuitem "Dev Studio"
+    - menuitem "App Studio"
+    - menuitem "Admin Studio"
+    - menuitem "Prediction Studio"
+- complementary "Left Panel":
+  - tablist:
+    - tab "Recents" [selected]
+    - tabpanel "Recents":
+      - heading "Recents" [level=2]
+      - button
+      - textbox "Search recents"
+      - text: Group - Yoda may G-117046 Group - Yoda may G-118030 Group - Yoda may G-118029 Group - Yoda may G-117044 Group - Yoda may G-117045 Group - Yoda may G-117043 Group - Yoda may G-117042 Group - Yoda may G-117041 Group - Yoda may G-117040 Group - Yoda may G-117039 Group - Yoda may G-117036 Group - Yoda may G-117038 Group - Yoda may G-117037 Group - Yoda may G-117035 Order Fulfillment - Yoda may O-278466 Group - Yoda may G-112084 Order Fulfillment - Yoda may O-278468 Order Fulfillment - Yoda may O-278467 Group - Yoda may G-116027 Group - Yoda may G-114094 Order Fulfillment - Yoda may O-273228 Group - Yoda may G-114093 Group - Yoda may G-114091 Group - Yoda may G-114090 Group - Yoda may G-114092 Group - Yoda may G-114089 Group - Yoda may G-114088 Group - Yoda may G-112088 Order Fulfillment - Yoda may O-272761 Group - Yoda may G-112087
+    - tab "Case types"
+    - tab "Data types"
+    - tab "App"
+    - tab "Records"
+    - tab "Favorites"
+    - text: tab
+  - button "Operator menu":
+    - button "Maneesh Pagadakula":
+      - img: MP
+- main "Center Panel":
+  - table:
+    - rowgroup:
+      - row:
+        - cell:
+          - table:
+            - rowgroup:
+              - row:
+                - cell
+                - cell
+  - list:
+    - listitem:
+      - menu "Currently open": 
+  - tablist:
+    - tab "Home" [selected]
+    - listitem:
+      - table:
+        - rowgroup:
+          - row
+  - tabpanel "Home":
+    - img
+    - button "Hide this until the next release"
+    - button "Read more on Pega Community"
+    - heading "Guardrail warnings (last 7 days)" [level=3]:
+      - heading "Guardrail warnings (last 7 days)" [level=3]
+      - link "View all warnings":
+        - /url: "#"
+      - link "Refresh":
+        - /url: "#"
+    - link "Severe":
+      - /url: "#"
+    - link "Moderate":
+      - /url: "#"
+    - link "Informational":
+      - /url: "#"
+    - text: Introduced by you
+    - link "0":
+      - /url: "#"
+    - link "0":
+      - /url: "#"
+    - link "0":
+      - /url: "#"
+    - text: Introduced by team
+    - link "2":
+      - /url: "#"
+    - link "24":
+      - /url: "#"
+    - link "4":
+      - /url: "#"
+    - heading "Security checklist" [level=3]:
+      - heading "Security checklist" [level=3]
+      - link "Refresh":
+        - /url: "#"
+    - text: Security guide not configured
+- contentinfo "Bottom Panel":
+  - link "Current work":
+    - /url: "#"
+  - link "Scenario testing":
+    - /url: "#"
+  - link "Issues":
+    - /url: "#"
+  - link "Tracer":
+    - /url: "#"
+  - link "Clipboard":
+    - /url: "#"
+  - link "Live UI":
+    - /url: "#"
+  - link "Live Data":
+    - /url: "#"
+  - link "Accessibility":
+    - /url: "#"
+  - link "Performance":
+    - /url: "#"
+  - button "About Pega Infinity"
+```
